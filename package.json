@@ -1,0 +1,31 @@
+{
+  "name": "maramshon",
+  "version": "6.11.3",
+  "description": "first MVP",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maramshon/MVP-solo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maramshon/MVP-solo/issues"
+  },
+  "homepage": "https://github.com/maramshon/MVP-solo#readme",
+  "dependencies": {
+    "express": "^4.15.5",
+    "jquery": "^3.2.1",
+    "mongodb": "^2.2.31",
+    "mongoose": "^4.11.13",
+    "morgan": "^1.8.2",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0"
+  }
+}
