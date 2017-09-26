@@ -31,12 +31,26 @@ app.get('/*',function(req,res){
 
 app.post('/*', function (req, res) {
   console.log(req.body.username);
-  console.log('I am in the server')
+  console.log('I am in the server');
+  var x= db.List({
+  	username: req.body.username
+  });
+  x.save(function(err){
+  	if(err){console.log(err);}
+  });
+  res.render('/')
 });
 
-// app.post('/', function (req, res) {
-//   console.log(req.body.username);
-// });
+app.post('/', function (req, res) {
+  console.log(req.body);
+  var x= db.List({
+  	username: req.body.username
+  });
+  x.save(function(err){
+  	if(err){console.log(err);}
+  });
+  res.render('/')
+});
 
 app.listen(8000, function(){
 	console.log('teneh al7azena')
