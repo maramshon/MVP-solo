@@ -86,8 +86,6 @@ var Main = React.creatClass({
 		ajaxPost(term, this.fetch);
 	}
 
-	// ajaxPost (username, )
-
 	render() {
 		return (
 			<div>

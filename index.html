@@ -1,73 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<title>TOBUY List</title>
-<!-- </head>
-<body>
-<dir id="app">
-	<h1>TOBUY LIST </h1>
-	<br>
-	<h3>user name: </h3>
-	<form action="*" method="post">
-	    <div>
-	      <input id="username" type="text" name="username">
-	    </div>
-	    <div>
-	      <input type="submit" value="Login">
-	    </div>
-	</form>
-</dir> -->
-<!-- <script src="/app/bundle.js"></script> -->
-<!-- <script src="build/react.js"></script>
-<script src="build/react-dom.js"></script>
-<script type="http://unpkg.com/babel-core@5.8.38/browser.min.js"></script>
-<script src="output.js"></script> -->
-<!-- <script type="text/javascript" src="/server/index.js"></script> -->
-<!-- <script type="text/javascript" src="index.jsx"></script> -->
-<!-- 
-<script type="text/babel">
-	ReactDOM.render(
-	<h1>the react is working AKHIRAN</h1>,
-	document.getElementById('app'));
-</script>
-</body>
-</html> -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!DOCTYPE html>
-<html>
-<head>
 	<title>
 		
 	</title>
@@ -77,7 +10,7 @@
 		<h1>TOBUY LIST </h1>
 		<br>
 		<h3>user name: </h3>
-		<form action="*" method="post">
+		<form action="*" method="get">
 		    <div>
 		      <input id="username" type="text" name="username">
 		    </div>
@@ -94,13 +27,11 @@
 <script type="text/babel">
 
 class App extends React.Component {
-	constructor(props){   // act like init function in backbone
+	constructor(props){  
 		super(props);
 		this.state = {
 			comments: []
 		}
-
-		
 
 		this.fetch(); 
 	}
@@ -120,14 +51,31 @@ class App extends React.Component {
 		});
 	}
 
-	<!-- render() {
-		return (
-			<div>
-				
-				
-			</div>
-			)
-	} -->
+	render() {}
+
+	updateState (data) {
+	    console.log('Updating state: ', data);
+	    this.setState({repos: data});
+    }
+
+	ajaxPost(username, updateState) {
+		var data = JSON.stringify({username: username});
+		console.log('Posting data: ', data);
+		$.ajax({
+		  url: 'http://localhost:8000/',
+		  method: 'POST',
+		  contentType: 'application/json',
+		  processData: false,
+		  data: data,
+		  success: (data) =>{
+		    console.log('POST success: ', data);
+		    updateState(data);
+		  },
+		  error: (data) => {
+		    console.log('POST error: ', data);
+    }
+  });
+};
 }
 
 ReactDOM.render(
