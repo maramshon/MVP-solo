@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
 	<title>TOBUY List</title>
-</head>
+<!-- </head>
 <body>
 <dir id="app">
 	<h1>TOBUY LIST </h1>
@@ -16,6 +17,125 @@
 	      <input type="submit" value="Login">
 	    </div>
 	</form>
-</dir>
+</dir> -->
+<!-- <script src="/app/bundle.js"></script> -->
+<!-- <script src="build/react.js"></script>
+<script src="build/react-dom.js"></script>
+<script type="http://unpkg.com/babel-core@5.8.38/browser.min.js"></script>
+<script src="output.js"></script> -->
+<!-- <script type="text/javascript" src="/server/index.js"></script> -->
+<!-- <script type="text/javascript" src="index.jsx"></script> -->
+<!-- 
+<script type="text/babel">
+	ReactDOM.render(
+	<h1>the react is working AKHIRAN</h1>,
+	document.getElementById('app'));
+</script>
+</body>
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		
+	</title>
+</head>
+<body>
+	<dir id="app">
+		<h1>TOBUY LIST </h1>
+		<br>
+		<h3>user name: </h3>
+		<form action="*" method="post">
+		    <div>
+		      <input id="username" type="text" name="username">
+		    </div>
+		    <div>
+		      <input type="submit" value="Login">
+		    </div>
+		</form>
+	</dir>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+<script type="text/babel">
+
+class App extends React.Component {
+	constructor(props){   // act like init function in backbone
+		super(props);
+		this.state = {
+			comments: []
+		}
+
+		
+
+		this.fetch(); 
+	}
+
+	fetch(){
+		console.log('I am in get yahooooooooooooooo!!!')
+		$.ajax({
+			url: 'http://127.0.0.1:8000',
+			type: 'GET',
+			success: (data) => {
+				console.log("I have the data: ", data);
+				this.setState({comments: data});
+			},
+			error: (data) =>{
+				console.log("I have error: ",data);
+			}
+		});
+	}
+
+	<!-- render() {
+		return (
+			<div>
+				
+				
+			</div>
+			)
+	} -->
+}
+
+ReactDOM.render(
+    <App />,
+    document.getElementById('app')
+);
+
+</script>
+
 </body>
 </html>

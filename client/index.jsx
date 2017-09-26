@@ -15,6 +15,7 @@ class App extends React.Component {
 	}
 
 	fetch(){
+		console.log('I am in get yahooooooooooooooo!!!')
 		$.ajax({
 			url: 'http://127.0.0.1:8000',   ///////////////////////////////////////
 			type: 'GET',
@@ -28,6 +29,13 @@ class App extends React.Component {
 		});
 	}
 
+	// search () {
+	// 	console.log(`${term} was searched`);
+	// 	ajaxPost(term, this.fetch);
+	// }
+
+	// ajaxPost (username, )
+
 	render() {
 		return (
 			<div>
@@ -39,3 +47,5 @@ class App extends React.Component {
 	}
 }
 ReactDOM.render(<App />, document.getElementById('app'));
+
+export default App; 
